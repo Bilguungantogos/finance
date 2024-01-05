@@ -10,9 +10,9 @@ import { useRouter } from "next/router";
 export default function Records() {
   const router = useRouter();
   const { user } = useContext(UserContext);
-  if (!user) {
-    router.push("/");
-  }
+  // if (!user) {
+  //   router.push("/");
+  // }
   return (
     <div>
       <Header />
@@ -39,15 +39,15 @@ export default function Records() {
           <div className=" flex px-12 py-10">
             <div className="flex flex-col items-center py-10 px-14 gap-2 ">
               <img src="/avatar.png" className="w-40" />
-              <h2 className="">{user.name}</h2>
-              <p>{user.email}</p>
+              <h2 className="">{user?.name}</h2>
+              <p>{user?.email}</p>
               <p>Mongolia</p>
             </div>
             <div className="w-full px-10 flex flex-col justify-between">
               <div className="flex justify-between">
                 <p>Name</p>
                 <p>:</p>
-                <p>{user.name}</p>
+                <p>{user?.name}</p>
               </div>
               <div className="flex justify-between">
                 <p>Role</p>
@@ -57,7 +57,7 @@ export default function Records() {
               <div className="flex justify-between">
                 <p>Email</p>
                 <p>:</p>
-                <p>{user.email}</p>
+                <p>{user?.email}</p>
               </div>
               <div className="flex justify-between">
                 <p>Email verification</p>
