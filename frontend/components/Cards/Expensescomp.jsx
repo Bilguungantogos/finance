@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { TransactionContext } from "@/context/TransactionContext";
+import React from "react";
 
 const Expensescomp = ({ expense }) => {
   return (
