@@ -10,9 +10,9 @@ import { useRouter } from "next/router";
 export default function Records() {
   const router = useRouter();
   const { user } = useContext(UserContext);
-  // if (!user) {
-  //   router.push("/");
-  // }
+  if (!user) {
+    router.push("/");
+  }
   return (
     <div>
       <Header />

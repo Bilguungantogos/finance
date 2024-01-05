@@ -5,6 +5,12 @@ import { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "@/context/UserProvider";
 import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+
+const navigations = [
+  { name: "Dashboard", path: "/" },
+  { name: "Records", path: "/records" },
+];
 
 const Header = () => {
   const router = useRouter();
@@ -18,6 +24,7 @@ const Header = () => {
   };
 
   const { user, logout } = useContext(UserContext);
+  const isActive = usePathname();
 
   return (
     <header className="flex items-center justify-between px-[120px] py-4">
@@ -25,12 +32,19 @@ const Header = () => {
         <Link href="./">
           <img src="./vector.svg" className="w-[27.7px] h-[27.3px]" />
         </Link>
-        <Link href="./">
-          <p className="font-semibold">Dashboard</p>
-        </Link>
-        <Link href="./records">
-          <p>Records</p>
-        </Link>
+        {navigations.map((navigation, i) => (
+          <Link
+            className={`transition-all duration-75 ${
+              isActive === navigation.path
+                ? "font-semibold"
+                : "hover:font-semibold "
+            }`}
+            key={i}
+            href={navigation.path}
+          >
+            {navigation.name}
+          </Link>
+        ))}
       </div>
       <div className="flex items-center gap-6">
         <button

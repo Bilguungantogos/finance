@@ -52,7 +52,7 @@ const Barchart = ({ barChartData }) => {
   return (
     <div className="w-[588px] bg-white rounded-[10px]">
       <h2 className="px-6 py-4">Income - Expense</h2>
-      {/* {barChartData && <Bar data={data1} options={options1} />}
+      {barChartData && <Bar data={data1} options={options1} />}
       {!barChartData && (
         <div className="flex justify-center items-end   gap-4 w-full ">
           <div className="skeleton h-14 w-4"></div>
@@ -63,7 +63,7 @@ const Barchart = ({ barChartData }) => {
           <div className="skeleton h-16 w-4"></div>
           <div className="skeleton h-14 w-4"></div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
