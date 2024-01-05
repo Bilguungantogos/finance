@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Incomecomp from "./incomecomp";
+import Incomecomp from "./Incomecomp";
 import Expensescomp from "./Expensescomp";
 import Debitcard from "./Debitcard";
 import { TransactionContext } from "@/context/TransactionContext";
