@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import Category from "./Category";
 import ExpenseForm from "../ExpenseForm";
 import { useState } from "react";
-import Addcategory from "./addcategory";
-import { UserContext } from "@/context/UserProvider";
 
 const Recordscategory = () => {
   const categoryNames = [

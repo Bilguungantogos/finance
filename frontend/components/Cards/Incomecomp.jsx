@@ -1,6 +1,4 @@
-import { TransactionContext } from "@/context/TransactionContext";
-
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
 const Incomecomp = ({ income }) => {
   return (

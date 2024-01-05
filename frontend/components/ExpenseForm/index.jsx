@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
-import Addcategory from "../Recordscategory/addcategory";
 import { UserContext } from "@/context/UserProvider";
 import CategoryForm from "../addCategoryForm";
 import { TransactionContext } from "@/context/TransactionContext";
