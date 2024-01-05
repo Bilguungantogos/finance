@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { UserContext } from "../UserProvider";
-import axios from "axios";
 import { toast } from "react-toastify";
+import myAxios from "@/utils/axios";
 
 export const TransactionContext = createContext(null);
 
@@ -26,7 +26,7 @@ const TransactionProvider = ({ children }) => {
     console.log("DATA", transactionData);
     console.log("USER", user);
     try {
-      const { data } = await axios.post("http://localhost:8008/transactions", {
+      const { data } = await myAxios.post("/transactions", {
         ...transactionData,
         user_id: `b0fff3b0-cf44-4605-818e-d94e250d372f`,
       });
@@ -40,8 +40,8 @@ const TransactionProvider = ({ children }) => {
 
   const getAllIncomeExpense = async () => {
     try {
-      const { data } = await axios.get(
-        "http://localhost:8008/transactions/incomeandexpense/" +
+      const { data } = await myAxios.get(
+        "/transactions/incomeandexpense/" +
           `b0fff3b0-cf44-4605-818e-d94e250d372f`
       );
       setGetallinex(data);
@@ -53,9 +53,8 @@ const TransactionProvider = ({ children }) => {
     try {
       const {
         data: { transactions },
-      } = await axios.get(
-        "http://localhost:8008/transactions/" +
-          "b0fff3b0-cf44-4605-818e-d94e250d372f"
+      } = await myAxios.get(
+        "/transactions/" + "b0fff3b0-cf44-4605-818e-d94e250d372f"
       );
       setTransactions(transactions);
     } catch (error) {}

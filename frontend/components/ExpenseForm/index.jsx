@@ -4,7 +4,7 @@ import Addcategory from "../Recordscategory/addcategory";
 import { UserContext } from "@/context/UserProvider";
 import CategoryForm from "../addCategoryForm";
 import { TransactionContext } from "@/context/TransactionContext";
-import axios from "axios";
+import myAxios from "@/utils/axios";
 import RecordIcons from "./RecordIcons";
 
 const ExpenseForm = ({ open, closeForm }) => {
@@ -39,7 +39,7 @@ const ExpenseForm = ({ open, closeForm }) => {
   const getCategories = async () => {
     const {
       data: { categories },
-    } = await axios.get("http://localhost:8008/categories");
+    } = await myAxios.get("/categories");
     console.log("RES", categories);
     setCategory(categories);
     console.log(user);
